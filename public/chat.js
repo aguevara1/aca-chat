@@ -42,7 +42,8 @@ function renameUser(){
               text:"joined"
             };
 
-        fetch('http://localhost:8080/users', {
+       // fetch('http://localhost:8080/users', {
+          fetch('/users', {
           method: "POST",
           mode: 'cors',
           headers: {"Content-Type": "application/json"},
@@ -71,7 +72,8 @@ function renameUser(){
 function listUsers(){
 let messagesDivForUser = document.getElementById('who')
 let displayUser = '';
-fetch('http://localhost:8080/users', {
+//fetch('http://localhost:8080/users', {
+  fetch('/users', {
   method: "GET",
   mode: 'cors', 
   headers: {
