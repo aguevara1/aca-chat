@@ -13,7 +13,8 @@ let text="";
 
 
 window.onload = function(){
-    fetch('http://localhost:8080/clients', {
+   // fetch('http://localhost:8080/clients', {
+      fetch('/clients', {
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify({ 'Status': "Client Logged In" })
