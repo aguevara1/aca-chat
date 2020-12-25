@@ -106,7 +106,9 @@ function postInputTxt(){
 
       document.getElementById('theMessage').value = '';
 
-    fetch('http://localhost:8080/messages', {
+  //  fetch('http://localhost:8080/messages', {
+
+      fetch('/messages', {
       method: "POST",
       mode: 'cors', 
       headers: {"Content-Type": "application/json"},
@@ -124,7 +126,8 @@ function postInputTxt(){
 setInterval(function(){ 
   let messagesDiv = document.getElementById('messagesForDisplay')
   let displayMsg = '';
-  fetch('http://localhost:8080/messages')
+ // fetch('http://localhost:8080/messages')
+  fetch('/messages')
       .then(response => response.json())
       .then(data => {
            data.map(m => {
