@@ -31,7 +31,7 @@ app.listen(thePort, (err) => {
 
 */
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 8080;
  /*if (port == null || port == "") {
   port = 3000;
 }  */
