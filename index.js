@@ -1,11 +1,40 @@
+let express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+app.use(bodyParser.json());
+app.use(express.static("./public"));
+
+let clientRoutes=require("./routes/client.js");
+let messageRoutes=require("./routes/message.js");
+let renameuserRoutes=require("./routes/renameuser.js");
 
 
-let clientId = 0;
 
 
-const messages = [
-  {
-    clientId: 0,
-    text: "Welcome To Chat"
-  }
-];
+app.use(clientRoutes);
+app.use(messageRoutes);
+app.use(renameuserRoutes);
+
+
+
+ 
+
+const thePort = 8080;
+app.listen(thePort, (err) => {
+ if (err) {
+   return console.log("Error", err);
+ }
+ console.log("Web server is now listening for messages on port",thePort);
+
+
+});
+
+
+
+/*
+app.get('/clients?' , (request, response) => {
+ 
+   console.log(clientId);
+});
+
+*/

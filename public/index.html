@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-</head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyChat</title>
+  <!--My styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/reset.css"></link>
+  <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+  <link href="https://fonts.googleapis.com/css?family=Arsenal|Gudea|Monda|Varela+Round" rel="stylesheet"></link>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="chat.js"></script> 
+
+</head> 
+
 <body>
-    <script src="chat.js"></script>   
+    <div id="prompt">
+        <div id="name-info">
+         Enter your name: </br>
+           <input id="name" style="height:35px;font-size:14pt;"/>
+           <button id="userButton" type="button" onclick="renameUser()">Enter</button>
+        </div>
+    </div>
+
+
+
+  <div id="main-container">
+     
+      <div id="main-label">
+        <h1 class="label">Chats</h1>
+      </div>
+    <div id="main-content">
+      <ul class="chats" id="messagesForDisplay"></ul>
+    
+ 
+      <div id="controls">
+        <input type="text" style="height:45px;font-size:14pt;" id="theMessage" placeholder="Type a message.."/>
+        <button type="button" id="messageButton" onclick='postInputTxt()' >SEND</button>  
+      </div>    
+
+      <div id="who-container">
+       <p id="who-label">Who's online</p>
+       <div id="who-content">
+         <div id="who"></div>
+       </div>
+      </div>
+    </div>
+ 
+  </div>
+
+ 
+
+<script>
+
+$(document).on('keypress', '#name' ,function(e) {
+    if(e.which == 13) {
+    
+      renameUser();
+
+    }
+});
+
+$(document).on('keypress', '#theMessage' ,function(e) {
+    if(e.which == 13) {
+    
+      postInputTxt();
+      $('input[type="text"]').val('');
+    }
+});
+
+</script>
+
 </body>
 </html>
