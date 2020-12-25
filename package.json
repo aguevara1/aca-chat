@@ -4,6 +4,7 @@
   "description": "A messaging system is one of the most popular types of software there is. Skype, text, gtalk, slack, rocket chat. Let's build a web browser based chat app. Browsers cannot talk to each other directly. They need a server to be the middle man. ## Setup * fork, clone * npm init * npm i express body-parser",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
