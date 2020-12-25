@@ -18,7 +18,7 @@ app.use(renameuserRoutes);
 
 
  
-
+/*
 const thePort = 8080;
 app.listen(thePort, (err) => {
  if (err) {
@@ -29,12 +29,10 @@ app.listen(thePort, (err) => {
 
 });
 
-
-
-/*
-app.get('/clients?' , (request, response) => {
- 
-   console.log(clientId);
-});
-
 */
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8080;
+}
+app.listen(port);
